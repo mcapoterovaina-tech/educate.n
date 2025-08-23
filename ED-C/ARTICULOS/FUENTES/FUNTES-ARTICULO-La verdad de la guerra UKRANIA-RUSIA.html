@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>educate.n — Fuentes y archivos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="file:///C:/Users/maikol/Desktop/educate.n/ED-C/viciogame.png" sizes="68x68">
+  <style>
+    :root{
+      --primary: #0A3D62;
+      --text: #2F3640;
+      --bg: #ffffff;
+      --muted: #77828c;
+      --maxw: 960px;
+    }
+    body{
+      margin:0; font-family:'Poppins', sans-serif;
+      background:var(--bg); color:var(--text);
+    }
+    header{
+      border-bottom:1px solid rgba(0,0,0,0.06);
+      padding:14px 0;
+    }
+    .container{max-width:var(--maxw); margin:auto; padding:0 16px;}
+    .brand{display:flex; align-items:center; gap:10px;}
+    .brand img{width:34px; height:34px; border-radius:8px; object-fit:cover;}
+    .brand-name{font-weight:600; color:var(--primary);}
+    h1{
+      font-family:'Merriweather', serif; font-size:1.4rem;
+      margin:24px 0 12px;
+    }
+    ul{
+      list-style:none; padding:0; margin:0;
+    }
+    li{
+      margin-bottom:10px; padding:10px; border-radius:8px;
+      border:1px solid rgba(0,0,0,0.06);
+      transition:background 0.2s;
+    }
+    li:hover{background:#f7f9fc;}
+    a{color:var(--primary); font-weight:500; text-decoration:none;}
+    p.desc{margin:4px 0 0; font-size:0.9rem; color:var(--muted);}
+    footer{
+      margin-top:30px; padding:14px 0; font-size:0.9rem; text-align:center;
+      color:var(--muted); border-top:1px solid rgba(0,0,0,0.06);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="brand">
+        <img src="file:///C:/Users/maikol/Desktop/educate.n/ED-C/viciogame.png" alt="Logo de educate.n">
+        <div class="brand-name">educate.n</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Fuentes y Archivos</h1>
+    <ul>
+      <li>
+        <a href="ARTICULOS/articulos-ukrania-rusia.html" target="_blank">Artículo — La verdad de la guerra Ucrania-Rusia</a>
+        <p class="desc">Página del artículo con contexto completo y multimedia</p>
+      </li>
+      <li>
+        <a href="https://ejemplo.com/fuente1" target="_blank">Fuente informativa #1</a>
+        <p class="desc">Descripción breve de la fuente</p>
+      </li>
+      <li>
+        <a href="docs/archivo.pdf" target="_blank">Archivo PDF — Documento de referencia</a>
+        <p class="desc">Material descargable utilizado para la investigación</p>
+      </li>
+    </ul>
+  </main>
+
+  <footer>
+    © <span id="year"></span> — educate.n
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
