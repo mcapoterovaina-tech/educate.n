@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="icon" href="/educate.n/ED-C/viciogame.png" sizes="68x68">
-<style>
+  <style>
     :root{
       --primary: #0A3D62;
       --secondary: #E58E26;
@@ -23,8 +23,6 @@
       --maxw: 1080px;
       --trans: 0.32s cubic-bezier(.22,.61,.36,1);
     }
-
-    /* Reset y base */
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
@@ -35,13 +33,9 @@
       -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
     }
     img{max-width:100%; display:block}
-
     a{color:inherit; text-decoration:none}
     a:focus-visible, button:focus-visible{outline:none; box-shadow:var(--ring); border-radius:10px}
-
     .container{max-width:var(--maxw); margin:0 auto; padding:0 20px}
-
-    /* Header fijo con logo + nombre (izquierda) */
     header{
       position:sticky; top:0; z-index:50;
       backdrop-filter:saturate(180%) blur(12px);
@@ -60,11 +54,8 @@
     .brand-name{
       font-weight:600; letter-spacing:.2px; color:var(--primary)
     }
-
     main{padding:24px 0 64px}
     .spacer{height:8px}
-
-    /* Presentación: dos columnas */
     .presentation{
       display:grid; grid-template-columns: 1.05fr .95fr; gap:28px;
       align-items:stretch; margin:10px 0 28px;
@@ -78,7 +69,6 @@
       width:100%; height:100%; object-fit:cover;
       aspect-ratio: 16/10; background:#dfe6ee;
     }
-    /* Tarjeta de artículo destacado superpuesta en la parte inferior de la foto */
     .featured-card{
       position:absolute; left:16px; right:16px; bottom:16px;
       background:rgba(255,255,255,.92);
@@ -104,7 +94,6 @@
       margin:0; font-size:.92rem; line-height:1.45; color:#42505a;
       display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden;
     }
-
     .presentation .objective{
       border-radius: var(--radius);
       background: var(--surface);
@@ -116,219 +105,144 @@
       margin:0; font-size:1rem; line-height:1.7; color:#3a4651;
     }
     .objective p strong{color:var(--primary)}
-
-    /* Listado de artículos: tarjetas rectangulares estiradas, todo clickable */
     .articles{display:flex; flex-direction:column; gap:16px; margin:32px 0}
     .article-card{
-      display:grid; grid-template-columns:86px 1fr; gap:16px;
-      align-items:center; padding:16px; border-radius: var(--radius);
-      background: var(--surface);
-      box-shadow: var(--shadow);
-      border:1px solid rgba(0,0,0,.05);
-      transition: transform var(--trans), box-shadow var(--trans), background var(--trans), border-color var(--trans);
-      cursor:pointer;
+      display:grid; grid-template-columns:86px 1fr; gap:16px; align-items:center;
+      padding:16px; border-radius:var(--radius); background:var(--surface);
+      box-shadow:var(--shadow); border:1px solid rgba(0,0,0,.05);
+      transition:transform var(--trans), box-shadow var(--trans), background var(--trans);
     }
     .article-card:hover{
-      transform: translateY(-2px);
-      box-shadow: 0 14px 40px rgba(0,0,0,.12);
-      border-color: rgba(10,61,98,.20);
-      background: #fff;
+      transform:translateY(-2px);
+      box-shadow:0 14px 40px rgba(0,0,0,.12);
+      background:#fff;
     }
     .article-thumb{
-      width:86px; height:86px; border-radius:12px; object-fit:cover; background:#e7ecf3;
-      border:1px solid rgba(0,0,0,.06);
+      width:86px; height:86px; border-radius:12px; object-fit:cover;
+      background:#e7ecf3; border:1px solid rgba(0,0,0,.06)
     }
     .article-content h4{
       margin:0 0 6px; font-size:1.02rem; font-weight:700; color:#0b2f49
     }
     .article-content p{
-      margin:0; color:#4a5864; font-size:.96rem; line-height:1.65;
-      display:-webkit-box; -webkit-line-clamp:8; -webkit-box-orient:vertical; overflow:hidden;
-      text-align:justify;
+      margin:0; color:#4a5864; font-size:.96rem; line-height:1.65; text-align:justify;
+      display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden;
     }
 
-    /* Contacto */
+    /* Contacto fijo */
     .contact{
-      margin:40px 0 20px;
-      background: linear-gradient(180deg, rgba(10,61,98,.06), rgba(229,142,38,.05));
-      border:1px solid rgba(0,0,0,.06);
-      padding:24px;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
+      margin:48px 0 16px; padding:24px;
+      border-radius:var(--radius); background:var(--surface);
+      border:1px solid rgba(0,0,0,.05); box-shadow:var(--shadow);
     }
-    .contact h3{margin:0 0 14px; font-size:1.08rem; font-weight:700; color:#0b2f49}
-    .contact .actions{
-      display:flex; flex-wrap:wrap; gap:12px; margin-bottom:12px;
+    .contact h3{
+      margin:0 0 12px; font-size:1.06rem; color:#0b2f49;
+    }
+    .actions{
+      display:flex; flex-wrap:wrap; gap:12px; align-items:center;
     }
     .btn{
-      display:inline-flex; align-items:center; gap:10px;
-      padding:10px 14px; border-radius:12px; color:#fff; font-weight:600; font-size:.95rem;
-      transition: transform var(--trans), box-shadow var(--trans), filter var(--trans);
-      will-change: transform;
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 12px; border-radius:12px; font-weight:600;
+      color:#fff; box-shadow:var(--shadow); transition:transform var(--trans), box-shadow var(--trans), filter var(--trans);
     }
-    .btn svg{width:18px; height:18px}
-    .btn:hover{transform:translateY(-2px); box-shadow:0 10px 24px rgba(0,0,0,.12)}
-    .btn:active{transform:translateY(0); filter:saturate(1.1)}
-    .btn-gmail{background:#D44638}
-    .btn-facebook{background:#1877F2}
-    .btn-discord{background:#5865F2}
-
+    .btn:hover{ transform:translateY(-2px); box-shadow:0 14px 40px rgba(0,0,0,.12); }
+    .btn svg{ width:18px; height:18px; }
+    .btn-gmail{ background:#D44638; }
+    .btn-facebook{ background:#1877F2; }
+    .btn-discord{ background:#5865F2; }
     .phone{
-      display:flex; align-items:center; gap:10px; color:#27323a; font-weight:600;
-      background:#fff; border:1px solid rgba(0,0,0,.06); padding:10px 14px; border-radius:12px;
-      width:max-content;
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 12px; border-radius:12px; background:#fff; color:var(--text);
+      border:1px solid rgba(0,0,0,.06);
     }
-    .phone a{color:inherit}
+    .phone svg{ width:18px; height:18px; }
+    .phone a{ color:inherit; font-weight:600; }
 
-    /* Footer con año + nombre centrados */
     footer{
-      margin-top:36px; padding:26px 0;
-      border-top:1px solid rgba(0,0,0,.08);
+      margin-top:36px; padding:26px 0; border-top:1px solid rgba(0,0,0,.08);
       color:#55616d; text-align:center; background:rgba(255,255,255,.6);
-      backdrop-filter:saturate(150%) blur(6px);
-      font-size:.95rem;
+      backdrop-filter:saturate(150%) blur(6px); font-size:.95rem
     }
-
-    /* Responsive */
-    @media (max-width: 980px){
-      .presentation{grid-template-columns:1fr; gap:18px}
+    @media (max-width:980px){
+      .presentation{grid-template-columns:1fr}
       .presentation .photo-wrap{min-height:260px}
-      .featured-card{left:12px; right:12px; bottom:12px}
-    }
-    @media (max-width: 640px){
-      .header-inner{height:58px}
-      .brand-name{font-size:1rem}
-      .article-card{grid-template-columns:74px 1fr; padding:14px}
-      .article-thumb{width:74px; height:74px}
-      .article-content h4{font-size:1rem}
-      .article-content p{-webkit-line-clamp:7}
-      .contact{padding:18px}
     }
   </style>
 </head>
 <body>
-  <!--
-    educate.n — Estructura base
-    Cómo publicar rápido:
-    1) Duplica un bloque <a class="article-card">…</a> en la sección .articles y cambia el href, título, miniatura y el párrafo.
-    2) El destacado se edita dentro de .featured-card (título, subtítulo y texto de 3 líneas).
-    3) Los botones de contacto: reemplaza los enlaces por los tuyos.
-  -->
-
   <header>
     <div class="container header-inner">
-      <a class="brand" href="#" aria-label="Inicio — educate.n">
-        <!--logo -->
+      <div class="brand">
         <img src="/educate.n/ED-C/viciogame.png" alt="Logo de educate.n">
-        <div class="brand-name">educate.n</div>
-      </a>
+        <span class="brand-name">educate.n</span>
+      </div>
     </div>
   </header>
 
-  <main>
-    <div class="container">
-      <div class="spacer"></div>
+  <main class="container">
+    <div class="spacer" aria-hidden="true"></div>
+    <section class="presentation" aria-label="Presentación">
+      <div class="photo-wrap">
+        <img class="photo" src="/educate.n/ED-C/ARTICULOS/ARCHIVOS_ARTICULOS/documento.webp" alt="Imagen del artículo destacado">
+        <a class="featured-card" href="/educate.n/ED-C/ARTICULOS/articulos-ukrania-rusia.html" aria-label="Leer artículo destacado">
+          <h3>Laverdad de la guerra UCRANIA-RUSIA</h3>
+          <div class="subtitle">Productividad • Método</div>
+          <p>En una grabación en primera persona captada con cámara de acción, se observa a un combatiente avanzando por un entorno urbano devastado en la región de Donetsk, durante el conflicto entre Rusia y Ucrania</p>
+        </a>
+      </div>
+      <aside class="objective" aria-label="Objetivo de educate.n">
+        <p><strong>educate.n</strong> es un espacio elegante y modular para publicar artículos de forma rápida, con enfoque en claridad, ética y curiosidad. Aquí los conceptos complejos se vuelven visuales, prácticos y disfrutables sin ruido innecesario.</p>
+      </aside>
+    </section>
 
-      <!-- Sección de Presentación -->
-      <section class="presentation" aria-label="Presentación">
-        <div class="photo-wrap">
-          <!--imagen de presentación -->
-          <img class="photo" src="/educate.n/ED-C/ARTICULOS/ARCHIVOS_ARTICULOS/documento.webp" alt="Imagen representativa de educate.n">
-
-          <!-- Tarjeta de artículo destacado-->
-          <a class="featured-card" href="/educate.n/ED-C/ARTICULOS/articulos-ukrania-rusia.html" aria-label="Leer artículo destacado">
-            <h3>Laverdad de la guerra UCRANIA-RUSIA</h3>
-            <div class="subtitle">Productividad • Método</div>
-            <p>
-              En una grabación en primera persona captada con cámara de acción, 
-              se observa a un combatiente avanzando por un entorno urbano devastado 
-              en la región de Donetsk, durante el conflicto entre Rusia y Ucrania
-            </p>
-          </a>
-        </div>
-
-        <aside class="objective">
-          <p>
-            <strong>educate.n</strong> es un espacio elegante y modular para publicar artículos de forma rápida,
-            con enfoque en claridad, ética y curiosidad. Aquí los conceptos complejos se vuelven visuales,
-            prácticos y disfrutables sin ruido innecesario.
-          </p>
-        </aside>
-      </section>
-
-      <!-- Listado de Contenidos / Artículos -->
-      <section class="articles" aria-label="Artículos">
-        <!-- Tarjeta 1 -->
-        <a class="article-card" href="/educate.n/ED-C/ARTICULOS/articulos-ukrania-rusia.html" aria-label="Abrir artículo: Sistema modular para publicar">
-          <img class="article-thumb" src="/educate.n/ED-C/ARTICULOS/ARCHIVOS_ARTICULOS/banderas-ucrania-rusia-crisis-militar-ucraniana-rusa-ucrania-vs-rusia-ilustracion-vectorial-aislada-sobre-fondo-blanco_162867-494.avif" alt="Ícono del artículo Sistema modular">
+    <section class="articles" aria-label="Artículos">
+        <a class="article-card" href="/educate.n/ED-C/ARTICULOS /posibles propiedades antifungicas del oregano.html" aria-label="Abrir artículo">
+          <img class="article-thumb" src="/educate.n/ED-C/ARTICULOS/ARCHIVOS_ARTICULOS/fotos-oregano /oregano.jpg" alt="" loading="lazy">
           <div class="article-content">
-            <h4>Laverdad de la guerra UCRANIA-RUSIA</h4>
+            <h4>¡Posibles propiedades antifúngicas del orégano!</h4>
             <p>
-              En una grabación en primera persona captada con cámara de acción, 
-              se observa a un combatiente avanzando por un entorno urbano devastado 
-              en la región de Donetsk, durante el conflicto entre Rusia y Ucrania. El
-               registro muestra el instante en que, tras moverse entre coberturas y escombros, 
-               se produce un enfrentamiento directo a muy corta distancia con un soldado enemigo.
-                Se aprecian disparos, movimientos rápidos y la tensión extrema propia de un combate 
-                real. El contexto sugiere que la zona tiene valor táctico y que ambos bandos luchan
-                 por el control de posiciones clave. La cercanía de los contendientes y el caos del 
-                 entorno transmiten la crudeza de la guerra moderna. El material deja ver detalles de 
-                 las armas y equipo utilizado, así como el estado ruinoso de las edificaciones. Más allá 
-                 de lo visual, ofrece una mirada inmediata a la vulnerabilidad y la intensidad física y
-                  psicológica de quienes están en el frente. La escena, por su naturaleza directa, plantea 
-                  preguntas sobre el impacto emocional y ético de difundir este tipo de imágenes.
+              El orégano (Origanum spp.), ampliamente utilizado en la gastronomía y en la medicina tradicional, contiene una diversidad de compuestos químicos que han despertado el interés científico por sus posibles propiedades antimicrobianas, antifúngicas, antioxidantes y anticancerígenas.
             </p>
           </div>
         </a>
-       </section> 
-      <!-- Contacto -->
-      <section class="contact" aria-label="Contacto">
-        <h3>Contáctame en estos sitios</h3>
-        <div class="actions">
-          <a class="btn btn-gmail" href="mailto:mcapoterovaina@gmail.com" aria-label="Enviar correo Gmail">
-            <!-- Icono Gmail -->
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 18H18V9.7L12 14L6 9.7V18H4V6H5.2L12 10.8L18.8 6H20V18Z"/></svg>
-            Gmail
-          </a>
-          <a class="btn btn-facebook" href="https://www.facebook.com/maikolgabriel.capoterovaina/" target="_blank" rel="noopener" aria-label="Abrir Facebook">
-            <!-- Icono Facebook -->
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.51 17.52 2 12 2S2 6.51 2 12.06c0 5.02 3.66 9.19 8.44 9.94v-7.03H7.9v-2.9h2.54V9.41c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.58v1.9h2.78l-.44 2.9h-2.34V22c4.78-.75 8.44-4.92 8.44-9.94Z"/></svg>
-            Facebook
-          </a>
-          <a class="btn btn-discord" href="https://discord.gg/tu-invite" target="_blank" rel="noopener" aria-label="Abrir Discord">
-            <!-- Icono Discord -->
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.369A19.791 19.791 0 0 0 16.558 3c-.2.356-.43.83-.589 1.205a18.27 18.27 0 0 0-7.938 0C7.873 3.83 7.643 3.356 7.443 3a19.795 19.795 0 0 0-3.758 1.369C1.744 8.222 1.06 12 1.34 15.727A19.9 19.9 0 0 0 6.01 18c.356-.49.67-1.017.934-1.574a12.75 12.75 0 0 1-1.475-.705c.125-.093.248-.19.366-.29 2.85 1.342 5.94 1.342 8.777 0 .12.1.243.197.366.29-.47.219-.962.418-1.474.605.264.566.578 1.093.934 1.583a19.86 19.86 0 0 0 4.668-2.273c.343-4.406-.616-8.152-1.789-11.667ZM9.75 13.5c-.724 0-1.312-.67-1.312-1.495 0-.826.586-1.496 1.312-1.496.725 0 1.313.67 1.313 1.496 0 .825-.588 1.495-1.313 1.495Zm4.5 0c-.724 0-1.312-.67-1.312-1.495 0-.826.586-1.496 1.312-1.496.725 0 1.313.67 1.313 1.496 0 .825-.588 1.495-1.313 1.495Z"/></svg>
-            Discord
-          </a>
-          <div class="phone" aria-label="Número de teléfono">
-            <!-- Icono teléfono -->
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="18" height="18"><path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24 11.72 11.72 0 0 0 3.68.59 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.85 21 3 13.15 3 3a1 1 0 0 1 1-1h2.47a1 1 0 0 1 1 1 11.72 11.72 0 0 0 .59 3.68 1 1 0 0 1-.24 1.01l-2.2 2.2Z"/></svg>
-            <a href="tel:+58XXXXXXXXXX">+58 XXX XXX XXXX</a>
+        <a class="article-card" href="/educate.n/ED-C/ARTICULOS/articulos-ukrania-rusia.html" aria-label="Abrir artículo: Sistema modular para publicar">
+          <img class="article-thumb" src="/educate.n/ED-C/ARTICULOS/ARCHIVOS_ARTICULOS/banderas-ucrania-rusia-crisis-militar-ucraniana-rusa-ucrania-vs-rusia-ilustracion-vectorial-aislada-sobre-fondo-blanco_162867-494.avif" alt="Ícono del artículo Sistema modular" loading="lazy">
+          <div class="article-content">
+            <h4>Laverdad de la guerra UCRANIA-RUSIA</h4>
+            <p>
+              En una grabación en primera persona captada con cámara de acción, se observa a un combatiente avanzando por un entorno urbano devastado en la región de Donetsk, durante el conflicto entre Rusia y Ucrania. El registro muestra el instante en que, tras moverse entre coberturas y escombros, se produce un enfrentamiento directo a muy corta distancia con un soldado enemigo. Se aprecian disparos, movimientos rápidos y la tensión extrema propia de un combate real. El contexto sugiere que la zona tiene valor táctico y que ambos bandos luchan por el control de posiciones clave. La cercanía de los contendientes y el caos del entorno transmiten la crudeza de la guerra moderna. El material deja ver detalles de las armas y equipo utilizado, así como el estado ruinoso de las edificaciones. Más allá de lo visual, ofrece una mirada inmediata a la vulnerabilidad y la intensidad física y psicológica de quienes están en el frente. La escena, por su naturaleza directa, plantea preguntas sobre el impacto emocional y ético de difundir este tipo de imágenes.
+            </p>
           </div>
+        </a>
+    </section>
+
+    <!-- Contacto -->
+    <section class="contact" aria-label="Contacto">
+      <h3>Contáctame en estos sitios</h3>
+      <div class="actions">
+        <a class="btn btn-gmail" href="mailto:mcapoterovaina@gmail.com" aria-label="Enviar correo Gmail">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 18H18V9.7L12 14L6 9.7V18H4V6H5.2L12 10.8L18.8 6H20V18Z"/></svg>
+          Gmail
+        </a>
+        <a class="btn btn-facebook" href="https://www.facebook.com/maikolgabriel.capoterovaina/" target="_blank" rel="noopener" aria-label="Abrir Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.51 17.52 2 12 2S2 6.51 2 12.06c0 5.02 3.66 9.19 8.44 9.94v-7.03H7.9v-2.9h2.54V9.41c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.58v1.9h2.78l-.44 2.9h-2.34V22c4.78-.75 8.44-4.92 8.44-9.94Z"/></svg>
+          Facebook
+        </a>
+        <a class="btn btn-discord" href="https://discord.gg/tu-invite" target="_blank" rel="noopener" aria-label="Abrir Discord">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.369A19.791 19.791 0 0 0 16.558 3c-.2.356-.43.83-.589 1.205a18.27 18.27 0 0 0-7.938 0C7.873 3.83 7.643 3.356 7.443 3a19.795 19.795 0 0 0-3.758 1.369C1.744 8.222 1.06 12 1.34 15.727A19.9 19.9 0 0 0 6.01 18c.356-.49.67-1.017.934-1.574a12.75 12.75 0 0 1-1.475-.705c.125-.093.248-.19.366-.29 2.85 1.342 5.94 1.342 8.777 0 .12.1.243.197.366.29-.47.219-.962.418-1.474.605.264.566.578 1.093.934 1.583a19.86 19.86 0 0 0 4.668-2.273c.343-4.406-.616-8.152-1.789-11.667ZM9.75 13.5c-.724 0-1.312-.67-1.312-1.495 0-.826.586-1.496 1.312-1.496.725 0 1.313.67 1.313 1.496 0 .825-.588 1.495-1.313 1.495Zm4.5 0c-.724 0-1.312-.67-1.312-1.495 0-.826.586-1.496 1.312-1.496.725 0 1.313.67 1.313 1.496 0 .825-.588 1.495-1.313 1.495Z"/></svg>
+          Discord
+        </a>
+        <div class="phone" aria-label="Número de teléfono">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24 11.72 11.72 0 0 0 3.68.59 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.85 21 3 13.15 3 3a1 1 0 0 1 1-1h2.47a1 1 0 0 1 1 1 11.72 11.72 0 0 0 .59 3.68 1 1 0 0 1-.24 1.01l-2.2 2.2Z"/></svg>
+          <a href="tel:+58XXXXXXXXXX">+58 XXX XXX XXXX</a>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   </main>
 
   <footer>
-    <div class="container">
-      © <span id="year"></span> — educate.n
-    </div>
+    © 2025 — educate.n
   </footer>
-
-  <script>
-    // Año dinámico
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
